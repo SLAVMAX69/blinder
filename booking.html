@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="bg">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Set the height of the body to viewport height */
+            overflow-y: scroll; /* Enable vertical scrolling */
+            background: url('2.png') repeat, url('3.png') repeat, url('4.png') repeat; /* Set multiple background images */
+            background-size: 100% auto; /* Adjust background size */
+            background-position: top left, top right, bottom left, bottom right; /* Position background images */
+        }
+
+        /* Adjust background positions for seamless scrolling */
+        @keyframes scroll {
+            0% {
+                background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+            }
+            100% {
+                background-position: 0% 100%, 100% 100%, 0% 100%, 100% 100%;
+            }
+        }
+
+        body {
+            animation: scroll 10s linear infinite;
+        }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резервиране на посещение - Blinder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Blinder Logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Начало</a></li>
+                <li><a href="about.html">За нас</a></li>
+                <li><a href="services.html">Услуги</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+                <li><a href="booking.html">Резервиране на посещение</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="booking">
+            <h2>Резервиране на посещение</h2>
+            <form id="bookingForm" action="https://formspree.io/f/xdoqvqwg" method="post">
+                <label for="date">Дата:</label>
+                <input type="date" id="date" name="date" required>
+                
+                <label for="time">Час:</label>
+                <input type="time" id="time" name="time" required>
+                
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label for="address">Адрес:</label>
+                <input type="text" id="address" name="address" required>
+                
+                <button type="submit">Резервирай</button>
+            </form>
+            <p id="message" style="color: red; display: none;">Тази дата и час вече са резервирани. Моля, изберете друго време.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Blinder. Всички права запазени.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Calculate today's date and two days ahead
+            var today = new Date();
+            var twoDaysAhead = new Date(today.getTime() + 2 * 24 * 60 * 60 * 1000); // 2 days * 24 hours * 60 minutes * 60 seconds * 1000 milliseconds
+            var formattedTwoDaysAhead = twoDaysAhead.toISOString().split('T')[0]; // Format as YYYY-MM-DD
+
+            // Set the min and max attributes for the date input field
+            document.getElementById('date').setAttribute('min', formattedTwoDaysAhead);
+
+            // Set the min and max attributes for the time input field
+            document.getElementById('time').setAttribute('min', '08:00');
+            document.getElementById('time').setAttribute('max', '15:00');
+        });
+    </script>
+</body>
+</html>

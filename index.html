@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="bg">
+  <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Set the height of the body to viewport height */
+            overflow-y: scroll; /* Enable vertical scrolling */
+            background: url('1.png') repeat, url('2.png') repeat, url('3.png') repeat, url('4.png') repeat; /* Set multiple background images */
+            background-size: 100% auto; /* Adjust background size */
+            background-position: top left, top right, bottom left, bottom right; /* Position background images */
+        }
+
+        /* Adjust background positions for seamless scrolling */
+        @keyframes scroll {
+            0% {
+                background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+            }
+            100% {
+                background-position: 0% 100%, 100% 100%, 0% 100%, 100% 100%;
+            }
+        }
+
+        body {
+            animation: scroll 10s linear infinite;
+        }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blinder - Метални Врати и Оградки</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Blinder Logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Начало</a></li>
+                <li><a href="about.html">За нас</a></li>
+                <li><a href="services.html">Услуги</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+                <li><a href="booking.html">Резервиране на посещение</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h2>Добре дошли в Blinder</h2>
+            <p>Вашият доверен партньор за метални врати и огради</p>
+        </section>
+        <section class="services-overview">
+            <h3>Нашите Услуги</h3>
+            <p>Предлагаме висококачествени метални врати и огради, съобразени с вашите нужди и предпочитания.</p>
+            <a href="services.html" class="button">Научете повече</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Blinder. Всички права запазени.</p>
+    </footer>
+</body>
+</html>

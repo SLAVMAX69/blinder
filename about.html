@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="bg">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Set the height of the body to viewport height */
+            overflow-y: scroll; /* Enable vertical scrolling */
+            background: url('1.png') repeat, url('2.png') repeat, url('3.png') repeat, url('4.png') repeat; /* Set multiple background images */
+            background-size: 100% auto; /* Adjust background size */
+            background-position: top left, top right, bottom left, bottom right; /* Position background images */
+        }
+
+        /* Adjust background positions for seamless scrolling */
+        @keyframes scroll {
+            0% {
+                background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+            }
+            100% {
+                background-position: 0% 100%, 100% 100%, 0% 100%, 100% 100%;
+            }
+        }
+
+        body {
+            animation: scroll 10s linear infinite;
+        }
+    </style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>За нас - Blinder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Blinder Logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Начало</a></li>
+                <li><a href="about.html">За нас</a></li>
+                <li><a href="services.html">Услуги</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+                <li><a href="booking.html">Резервиране на посещение</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="about-us">
+            <h2>За нас</h2>
+            <p>Blinder е водещ производител на метални врати и огради в България. С повече от 20 години опит в индустрията, ние предлагаме висококачествени продукти и изключително обслужване на клиентите.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Blinder. Всички права запазени.</p>
+    </footer>
+</body>
+</html>
