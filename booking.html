@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html lang="bg">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh; /* Set the height of the body to viewport height */
-            overflow-y: scroll; /* Enable vertical scrolling */
-            background: url('2.png') repeat, url('3.png') repeat, url('4.png') repeat; /* Set multiple background images */
-            background-size: 100% auto; /* Adjust background size */
-            background-position: top left, top right, bottom left, bottom right; /* Position background images */
-        }
-
-        /* Adjust background positions for seamless scrolling */
-        @keyframes scroll {
-            0% {
-                background-position: 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+                /* Responsive styles */
+                @media only screen and (max-width: 600px) {
+            /* Adjustments for smaller screens */
+            header {
+                padding: 10px;
             }
-            100% {
-                background-position: 0% 100%, 100% 100%, 0% 100%, 100% 100%;
-            }
-        }
 
-        body {
-            animation: scroll 10s linear infinite;
+            nav ul li {
+                display: block;
+                margin: 0;
+                padding: 10px 0;
+                text-align: center;
+            }
+
+            nav ul li a {
+                display: block;
+            }
+
+            main {
+                padding: 10px;
+            }
         }
     </style>
 <head>
